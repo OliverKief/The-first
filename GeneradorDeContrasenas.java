@@ -1,8 +1,8 @@
 import java.util.Random;
 
-public class GeneradorDeContraseñas {
+public class GeneradorDeContrasenas {
 
-    public static String generarContraseña(int longitud, boolean incluirNumeros, boolean incluirMayusculas, boolean incluirEspeciales) {
+    public static String generarContrasena(int longitud, boolean incluirNumeros, boolean incluirMayusculas, boolean incluirEspeciales) {
         String caracteres = "abcdefghijklmnopqrstuvwxyz";
         String numeros = "0123456789";
         String mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -20,24 +20,24 @@ public class GeneradorDeContraseñas {
             caracteresPermitidos += especiales;
         }
 
-        // Generar la contraseña
+        // Generar la contrasena
         Random random = new Random();
-        StringBuilder contraseña = new StringBuilder(longitud);
+        StringBuilder contrasena = new StringBuilder(longitud);
         for (int i = 0; i < longitud; i++) {
             int indiceAleatorio = random.nextInt(caracteresPermitidos.length());
-            contraseña.append(caracteresPermitidos.charAt(indiceAleatorio));
+            contrasena.append(caracteresPermitidos.charAt(indiceAleatorio));
         }
 
-        return contraseña.toString();
+        return contrasena.toString();
     }
 
     public static void main(String[] args) {
-        int longitud = 10; // Longitud de la contraseña
+        int longitud = 10; // Longitud de la contrasena
         boolean incluirNumeros = true;
         boolean incluirMayusculas = true;
         boolean incluirEspeciales = true;
 
-        String contraseña = generarContraseña(longitud, incluirNumeros, incluirMayusculas, incluirEspeciales);
-        System.out.println("Contraseña generada: " + contraseña);
+        String contrasena = generarContrasena(longitud, incluirNumeros, incluirMayusculas, incluirEspeciales);
+        System.out.println("Contrasena generada: " + contrasena);
     }
 }
